@@ -1,5 +1,5 @@
 # SWC 101
-Overflow and Underflow
+**Integer overflow leading into Ether theft**
 
 ### Example
 ## tokensalechallenge.sol
