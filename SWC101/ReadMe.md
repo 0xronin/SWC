@@ -31,7 +31,7 @@ contract TokenSaleChallenge {
     }
 
     function sell(uint256 numTokens) public {
-        require(balanceOf[msg.sender] - numTokens>= 0);
+        require(balanceOf[msg.sender] - numTokens >= 0);
 
         balanceOf[msg.sender] -= numTokens;
         msg.sender.transfer(numTokens * PRICE_PER_TOKEN);
@@ -41,6 +41,7 @@ contract TokenSaleChallenge {
 Looking at the contract we can see that it is an older version of solidity
 - where arithemetic underflow and overflow did not gave any errors, and 
 - require logic `require(balanceOf[msg.sender] - numTokens >= 0)` indicates potential flawed logic/redundant check
+> Point 33 [Security Pitfalls and Best Practices 101](https://secureum.substack.com/p/security-pitfalls-and-best-practices-101)
 
 using these two flaws we can exploit the contract and drain the ETH from the contract with the following Hack.
 
